@@ -1,3 +1,33 @@
+Absolutely 👍
+Below is a **clean, professional `requirements.txt`** and a **serious, architecture-focused `README.md`** that matches the tone and quality of the cleaned code.
+
+No hype, no emojis, no fluff — this will look good to engineers, not just casual GitHub visitors.
+
+---
+
+## ✅ `requirements.txt`
+
+```txt
+ollama
+chromadb
+pydantic
+typing-extensions
+```
+
+### Notes :
+
+* `ollama` → LLM inference + embeddings
+* `chromadb` → episodic memory store
+* `pydantic` → strict perception / intent parsing
+* `typing-extensions` → safety for Literal typing (older Python versions)
+
+If you want to be extra clean, you can later pin versions, but this is fine for now.
+
+---
+
+## ✅ `README.md`
+
+```md
 # NewArch
 
 NewArch is a **memory-augmented AI architecture experiment** focused on separating
@@ -29,3 +59,108 @@ This project is intended as a **research and systems-design exploration**, not a
 
 ## Architecture Overview
 
+```
+
+User Input
+↓
+Perception Module (Intent & Memory Need)
+↓
+Working Memory (Recent Context)
+↓
+Episodic Memory Retrieval (ChromaDB, gated)
+↓
+LLM Reasoning & Synthesis
+↓
+Response
+
+````
+
+### Components
+
+- **Perception**
+  - Classifies user intent (statement, question, greeting)
+  - Decides whether episodic memory is required
+
+- **Working Memory**
+  - Maintains short-term conversational context (in RAM)
+
+- **Episodic Memory**
+  - Vector-based storage of past interactions (ChromaDB)
+  - Retrieved only when relevant
+
+- **Semantic Memory (Optional / External)**
+  - Stable facts stored in editable JSON files
+  - Updated via offline consolidation
+
+- **Executive Control**
+  - Routes information and enforces cautious reasoning when memory is uncertain
+
+---
+
+## Key Features
+
+- Memory retrieval with similarity thresholds
+- Confidence-aware responses
+- No hallucinated long-term memory
+- Fully offline operation after model download
+- Simple, inspectable storage formats
+
+---
+
+## Installation
+
+### Prerequisites
+- Python 3.9+
+- Ollama installed and running locally
+
+Pull the required models:
+
+```bash
+ollama pull llama3.2
+ollama pull mxbai-embed-large
+````
+
+### Install dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+---
+
+## Usage
+
+Run the main interactive loop:
+
+```bash
+python main.py
+```
+
+Type `exit` or `quit` to stop the program.
+
+---
+
+## Project Status
+
+This project is **experimental** and under active iteration.
+
+Planned improvements include:
+
+* Multi-memory retrieval consensus
+* Confidence-weighted episodic memories
+* Skill-based modular extensions (adapters / LoRA)
+* Memory consolidation heuristics
+* Tool and actuator integration
+
+---
+
+## Disclaimer
+
+This repository is a **research prototype**.
+It is not intended for production use or deployment without further safety and robustness work.
+
+---
+
+
+Just tell me.
+```
