@@ -75,14 +75,22 @@ Pull the required models:
 ```bash
 ollama pull llama3.2
 ollama pull mxbai-embed-large
-Install dependencies
+```
+Install dependencies:
+```bash
 pip install -r requirements.txt
-Usage
+```
+
+Usage:
 Run the main interactive loop:
-
+```bash
 python main.py
+```
 Type exit or quit to stop the program.
-
+Run the consolidation script to save memories from the past interactions and asave it to the JSON file :
+```bash
+python consolidate.py
+```
 Project Status
 This project is experimental and under active iteration.
 
@@ -93,6 +101,7 @@ Confidence-weighted episodic memories
 Skill-based modular extensions (adapters / LoRA)
 Memory consolidation heuristics
 Tool and actuator integration
-Disclaimer
+
+Disclaimer:
 This repository is a research prototype. It is not intended for production use or deployment without further safety and robustness work.
 
